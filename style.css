@@ -1,0 +1,248 @@
+* { 
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box; 
+}
+
+html {
+  height: 100%;
+  background: url(/legion.png) no-repeat center center/cover fixed; /* fixa a imagem */
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Cinzel', serif;
+}
+main {
+  flex: 1; /* ocupa o espaço disponível e empurra o footer para baixo */
+}
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 20px;
+  position: relative;
+}
+
+.logo {
+  width: 180px;
+  height: auto;
+  margin: 0 20px;
+}
+
+.header-text {
+  text-align: center;
+  max-width: 600px;
+}
+
+.header-text h1 {
+  font-size: clamp(48px, 8vw, 72px);
+  background: linear-gradient(90deg, #000000, #000000, #000000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 3px;
+  text-shadow: 0 0 5px #ff0000, 2px 2px 15px rgba(0,0,0,0.7);
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.header-text h1::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  z-index: -1;
+  color: rgba(0,0,0,0.4);
+}
+
+.header-text p {
+  font-size: clamp(18px, 2.5vw, 22px);
+  color: #f1faee;
+  text-shadow: 0 0 5px rgba(255,255,255,0.6), 1px 1px 5px rgba(0, 0, 0, 0.349);
+}
+
+/* SEÇÃO CONTEÚDOS DA GUILDA - GRID COMPACTO */
+.sections-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 700px; /* seção compacta tipo quadradinho */
+}
+
+
+section.topicos {
+  margin-top: 10px;    /* distância menor do sections-row */
+  margin-bottom: 20px; /* mantém espaço para o Discord depois */
+  margin-left: auto;
+  margin-right: auto;
+  color: #f1f1f1
+}
+
+section {
+  background: rgba(0, 0, 0, 0.349);
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.192);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 150px;
+  max-width: 660px;   /* largura máxima da caixa */
+   margin: 20px auto;
+}
+
+section h2 {
+  color: #ff0015;
+  margin-bottom: 10px;
+  text-shadow: 1px 1px 3px #000000;
+}
+section p {
+  color: #f1f1f1
+}
+section ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 10px;
+}
+
+section li {
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #f1f1f1
+}
+
+section.about li {
+  display: flex;            /* ativa flex para alinhar emoji e texto */
+  align-items: center;      /* centraliza verticalmente emoji e texto */
+  justify-content: center;  /* centraliza horizontalmente o conjunto */
+  gap: 8px;                 /* espaço entre emoji e texto */
+  margin-bottom: 12px;      /* distância entre os itens da lista */
+}
+
+
+.lista-centralizada {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 0;
+  margin: 15px 0 0 0;
+  list-style: none;
+}
+
+.lista-centralizada li {
+  width: 100%;
+  display: block;
+  text-align: center;
+}
+
+.cta {
+  display: flex;
+  justify-content: center; /* centraliza horizontalmente */
+  align-items: center;     /* centraliza verticalmente */
+  width: 100%;
+  margin: 20px 0;
+  gap: 8px;
+}
+
+.discord-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* centraliza horizontalmente */
+  justify-content: center; /* centraliza verticalmente se houver altura extra */
+  gap: 15px; /* espaço entre título e botão */
+  width: 100%; /* garante que o container ocupe toda a largura */
+}
+
+.discord-button {
+  display: flex;            /* flex para garantir alinhamento interno */
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  min-width: 120px;
+  font-size: 16px;
+  border-radius: 50px;
+  background: linear-gradient(45deg, #7289da, #99aab5);
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0 0 15px rgba(114,137,218,0.6), 0 0 25px rgba(114,137,218,0.4);
+  transition: transform 0.18s, box-shadow 0.18s;
+}
+
+.discord-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(114,137,218,0.8), 0 0 35px rgba(114,137,218,0.6);
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  margin: 20px;
+  color: #fff;
+  background: rgba(0,0,0,0.2); /* transparente, deixa a imagem aparecer */
+}
+
+/* RESPONSIVO MOBILE */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    padding: 15px 10px;
+    gap: 15px;
+  }
+
+  .logo {
+    width: 100px;
+    margin: 10px 0;
+  }
+
+  .logo.right {
+    display: none;
+  }
+
+  .header-text h1 {
+    font-size: 6vw;
+    line-height: 1.2;
+  }
+
+  .header-text p {
+    font-size: 3.5vw;
+  }
+
+  section h2 {
+    font-size: 4.5vw;
+  }
+
+  section li {
+    font-size: 12px;
+  }
+
+  /* Botão compacto também no mobile */
+  .discord-button {
+    font-size: 14px;
+    padding: 8px 16px;
+    min-width: 100px;
+    max-width: fit-content;
+  }
+
+  /* Mobile empilhado */
+  .sections-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    max-width: 90%;
+  }
+
+  section {
+    width: 90%;
+    max-width: 300px;
+    min-height: 120px; /* altura menor para mobile */
+  }
+}
