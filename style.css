@@ -6,7 +6,7 @@
 
 html {
   height: 100%;
-  background: url(/legion.png) no-repeat center center/cover fixed; /* fixa a imagem */
+  background: url(/legion.png) no-repeat center center/cover fixed; 
 }
 
 body {
@@ -18,7 +18,7 @@ body {
   font-family: 'Cinzel', serif;
 }
 main {
-  flex: 1; /* ocupa o espaço disponível e empurra o footer para baixo */
+  flex: 1; 
 }
 header {
   display: flex;
@@ -65,20 +65,20 @@ header {
   text-shadow: 0 0 5px rgba(255,255,255,0.6), 1px 1px 5px rgba(0, 0, 0, 0.349);
 }
 
-/* SEÇÃO CONTEÚDOS DA GUILDA - GRID COMPACTO */
+
 .sections-row {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 15px;
   padding: 20px;
   margin: 0 auto;
-  max-width: 700px; /* seção compacta tipo quadradinho */
+  max-width: 700px; 
 }
 
 
 section.topicos {
-  margin-top: 10px;    /* distância menor do sections-row */
-  margin-bottom: 20px; /* mantém espaço para o Discord depois */
+  margin-top: 10px;    
+  margin-bottom: 20px; 
   margin-left: auto;
   margin-right: auto;
   color: #f1f1f1
@@ -94,7 +94,7 @@ section {
   flex-direction: column;
   justify-content: flex-start;
   min-height: 150px;
-  max-width: 660px;   /* largura máxima da caixa */
+  max-width: 660px;   
    margin: 20px auto;
 }
 
@@ -119,11 +119,11 @@ section li {
 }
 
 section.about li {
-  display: flex;            /* ativa flex para alinhar emoji e texto */
-  align-items: center;      /* centraliza verticalmente emoji e texto */
-  justify-content: center;  /* centraliza horizontalmente o conjunto */
-  gap: 8px;                 /* espaço entre emoji e texto */
-  margin-bottom: 12px;      /* distância entre os itens da lista */
+  display: flex;            
+  align-items: center;      
+  justify-content: center;  
+  gap: 8px;                 
+  margin-bottom: 12px;      
 }
 
 
@@ -145,8 +145,8 @@ section.about li {
 
 .cta {
   display: flex;
-  justify-content: center; /* centraliza horizontalmente */
-  align-items: center;     /* centraliza verticalmente */
+  justify-content: center; 
+  align-items: center;     
   width: 100%;
   margin: 20px 0;
   gap: 8px;
@@ -155,14 +155,14 @@ section.about li {
 .discord-section {
   display: flex;
   flex-direction: column;
-  align-items: center;   /* centraliza horizontalmente */
-  justify-content: center; /* centraliza verticalmente se houver altura extra */
-  gap: 15px; /* espaço entre título e botão */
-  width: 100%; /* garante que o container ocupe toda a largura */
+  align-items: center;   
+  justify-content: center; 
+  gap: 15px; 
+  width: 100%; 
 }
 
 .discord-button {
-  display: flex;            /* flex para garantir alinhamento interno */
+  display: flex;            
   align-items: center;
   justify-content: center;
   padding: 10px 20px;
@@ -186,10 +186,10 @@ footer {
   padding: 20px;
   margin: 20px;
   color: #fff;
-  background: rgba(0,0,0,0.2); /* transparente, deixa a imagem aparecer */
+  background: rgba(0,0,0,0.2);
 }
 
-/* RESPONSIVO MOBILE */
+
 @media (max-width: 600px) {
   header {
     flex-direction: column;
@@ -223,7 +223,7 @@ footer {
     font-size: 12px;
   }
 
-  /* Botão compacto também no mobile */
+  
   .discord-button {
     font-size: 14px;
     padding: 8px 16px;
@@ -231,7 +231,7 @@ footer {
     max-width: fit-content;
   }
 
-  /* Mobile empilhado */
+  
   .sections-row {
     display: flex;
     flex-direction: column;
@@ -243,6 +243,6 @@ footer {
   section {
     width: 90%;
     max-width: 300px;
-    min-height: 120px; /* altura menor para mobile */
+    min-height: 120px; 
   }
 }
